@@ -1343,6 +1343,13 @@
   dependencies:
     tslib "^2.3.0"
 
+"@ngrx/store@^18.0.2":
+  version "18.0.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-18.0.2.tgz#be885154531f52ce6fe0bcd1a6790c75544b42ea"
+  integrity sha512-ajwv0+njsO4vzArp9esnFvs1wyUb1U1W8E8LSCKrcW2hWWo9o1Pezj+JRsdQwatxHfrrPFuTDyajsl6GQM/JSA==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngtools/webpack@13.2.0":
   version "13.2.0"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-13.2.0.tgz#9e1b9f66007033cf1fd58345b364773ce090cb10"
@@ -5664,10 +5671,17 @@ rxjs@6.6.7, rxjs@^6.5.2:
   dependencies:
     tslib "^1.9.0"
 
-rxjs@^7.2.0, rxjs@~7.5.0:
+rxjs@^7.2.0:
   version "7.5.2"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.5.2.tgz#11e4a3a1dfad85dbf7fb6e33cbba17668497490b"
   integrity sha512-PwDt186XaL3QN5qXj/H9DGyHhP3/RYYgZZwqBv9Tv8rsAaiwFH1IsJJlcgD37J7UW5a6O67qX0KWKS3/pu0m4w==
+  dependencies:
+    tslib "^2.1.0"
+
+rxjs@^7.5.0:
+  version "7.8.1"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.8.1.tgz#6f6f3d99ea8044291efd92e7c7fcf562c4057543"
+  integrity sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==
   dependencies:
     tslib "^2.1.0"
 

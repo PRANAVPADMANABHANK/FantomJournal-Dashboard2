@@ -27,6 +27,8 @@ export class AuthService {
     }
 
     private removeTokens(): void {
+        console.log("token remove location")
+        
         localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');
     }
@@ -80,6 +82,6 @@ export class AuthService {
     logout(): void {
         this.removeTokens();
         console.log('access, refresh - token removed');
-        this.router.navigate(['/auth/boxed-signin']);
+        this.router.navigate(['/auth/logout']);
     }
 }

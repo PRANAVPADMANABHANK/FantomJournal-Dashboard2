@@ -17,6 +17,9 @@ import { SearchResultItem, SearchUserItem } from '../models/search.model';
 import { NOTIFICATIONS, PROFILEOPTIONS } from './data';
 import { PageTitle } from '../models/page-title.model';
 
+import { AuthService } from '../../../service/auth.service'; // Adjust the path if necessary
+
+
 @Component({
   selector: 'app-topbar',
   templateUrl: './topbar.component.html',
@@ -40,7 +43,8 @@ export class TopbarComponent implements OnInit {
 
   constructor (
     private authService: AuthenticationService,
-    private eventService: EventService
+    private eventService: EventService,
+    private appService: AuthService
   ) {
     this.eventService.on(EventType.CHANGE_PAGE_TITLE).subscribe(({ payload }) => {
       this.pageTitle = (payload as PageTitle).title;
@@ -69,6 +73,11 @@ export class TopbarComponent implements OnInit {
   }
 
 
+
+  onSignOut(): void {
+    console.log("signout got");
+    this.appService.logout();
+  }
   /**
    * Fetches search results
    */

@@ -130,13 +130,15 @@
                         <h6 class="text-overflow m-0">Welcome !</h6>
                     </div>
 
-                    <ng-container *ngFor="let option of profileOptions;let i=index">
-                        <div class="dropdown-divider" *ngIf="i===profileOptions.length-1"></div>
-                        <a class="notify-item" ngbDropdownItem>
+                    <!-- Profile Dropdown Options -->
+                    <ng-container *ngFor="let option of profileOptions; let i = index">
+                        <div class="dropdown-divider" *ngIf="i === profileOptions.length - 1"></div>
+                        <a class="notify-item" ngbDropdownItem (click)="option.label === 'Logout' ? onSignOut() : null">
                             <i [class]="option.icon"></i>
-                            <span style="cursor: pointer;" [routerLink]="option.redirectTo">{{option.label}}</span>
+                            <span style="cursor: pointer;" [routerLink]="option.redirectTo">{{ option.label }}</span>
                         </a>
                     </ng-container>
+
 
                 </div>
             </li>
