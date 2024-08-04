@@ -1,0 +1,39 @@
+<div class="account-pages my-5">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+                <div class="text-center" *ngIf="hasLogo">
+                    <div class="auth-logo">
+                        <a [routerLink]="'/'" class="logo logo-dark ">
+                            <span class="logo-lg">
+                                <img src="assets/images/fantom-journal-high-resolution-logo-transparent.png" alt="" height="80">
+                            </span>
+                        </a>
+
+                        <a [routerLink]="'/'" class="logo logo-light ">
+                            <span class="logo-lg">
+                                <img src="assets/images/fantom-journal-high-resolution-logo-transparent.png" alt="" height="80">
+                            </span>
+                        </a>
+                    </div>
+                    <p class="mt-2 mb-4" style="color: #000;">Keep Your Journal Hassle-Free</p>
+
+                </div>
+                <div class="card" [class]="cardClass">
+                    <div class="card-body p-4">
+
+                        <ng-content></ng-content>
+
+                    </div> <!-- end card-body -->
+                </div>
+
+                <ng-content select="[footerLink]"></ng-content>
+
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end page -->
