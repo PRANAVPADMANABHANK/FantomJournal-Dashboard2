@@ -15,6 +15,11 @@ import { PricingCardsComponent } from './pricing-cards/pricing-cards.component';
 import { ServicesComponent } from './services/services.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { CardsComponent } from './cards/cards.component';
+import { ThoughtsComponent } from './thoughts/thoughts.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 
 
@@ -30,7 +35,12 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     StatisticsComponent,
     PricingCardsComponent,
     CtaComponent,
-    FooterComponent
+    FooterComponent,
+    CardsComponent,
+    ThoughtsComponent,
+    ReviewsComponent,
+    PricingComponent,
+    ContactusComponent
   ],
   imports: [
     CommonModule,

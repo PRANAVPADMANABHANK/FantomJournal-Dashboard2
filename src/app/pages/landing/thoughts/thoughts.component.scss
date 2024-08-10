@@ -1,0 +1,338 @@
+// body {
+//     font-family: Arial, sans-serif;
+//     background: linear-gradient(360deg, #000000, #0fbb6400), url('../../../../assets/images/trading1.png') no-repeat center center fixed;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100vh;
+//     margin: 0;
+//     overflow: hidden;
+// }
+
+// .thoughtful-cards-container {
+//     position: relative;
+//     width: 80%;
+//     height: 80%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// .thoughtful-card {
+//     position: absolute;
+//     background-color: white;
+//     padding: 20px;
+//     border-radius: 50px;
+//     box-shadow: 0 4px 6px #000;
+//     text-align: center;
+//     color: #333;
+//     font-size: 16px;
+//     font-weight: bold;
+//     transition: transform 0.3s ease, box-shadow 0.3s ease;
+//     cursor: pointer;
+//     // max-width: 200px;
+//     line-height: 1.4;
+// }
+
+// .thoughtful-card::before,
+// .thoughtful-card::after,
+// .thoughtful-card .bubble {
+//     content: '';
+//     position: absolute;
+//     background-color: white;
+//     border-radius: 50%;
+//     box-shadow: -3px 2px 6px #000;
+//     z-index: -1;
+// }
+
+// .thoughtful-card::before {
+//     width: 20px;
+//     height: 20px;
+//     top: -10px;
+//     left: -10px;
+// }
+
+// .thoughtful-card::after {
+//     width: 15px;
+//     height: 15px;
+//     bottom: -10px;
+//     right: -10px;
+// }
+
+// .thoughtful-card .bubble {
+//     width: 10px;
+//     height: 10px;
+//     top: -5px;
+//     right: -15px;
+// }
+
+// .thoughtful-card:hover {
+//     transform: scale(1.05);
+//     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+// }
+
+// /* Positioning the cards in an irregular, connected manner */
+// .card1 {
+//     top: 10%;
+//     left: 10%;
+//     transform: rotate(-5deg);
+// }
+
+// .card2 {
+//     top: 30%;
+//     left: 30%;
+//     transform: rotate(3deg);
+// }
+
+// .card3 {
+//     top: 50%;
+//     left: 50%;
+//     transform: rotate(-2deg);
+// }
+
+// .card4 {
+//     top: 70%;
+//     left: 20%;
+//     transform: rotate(4deg);
+// }
+
+// .card5 {
+//     top: 20%;
+//     left: 60%;
+//     transform: rotate(-4deg);
+// }
+
+// @media (max-width: 768px) {
+//     .thoughtful-cards-container {
+//         width: 100%;
+//         height: auto;
+//         flex-direction: column;
+//         gap: 10px;
+//     }
+
+//     .thoughtful-card {
+//         position: relative;
+//         transform: none;
+//         width: 80%;
+//         margin: 10px auto;
+//     }
+
+//     .thoughtful-card::before,
+//     .thoughtful-card::after,
+//     .thoughtful-card .bubble {
+//         position: absolute;
+//         left: 50%;
+//         transform: translateX(-50%);
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$boxSpacing: 23px;
+$gridSize: 200px;
+$cornerRadius: $gridSize/2.1;
+
+body {
+  margin: $boxSpacing;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 15.5px;
+  background: white;
+  padding: 35px 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($gridSize, $gridSize));
+  grid-auto-rows: $gridSize;
+  grid-auto-flow: row dense;
+  grid-gap: $boxSpacing;
+  justify-content: center;
+}
+
+.card-top, .card-right, .card-bottom, .card-left {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 100%;
+  border-radius: $cornerRadius;
+  box-shadow: 11px 12px 9px -3px rgb(78 22 88);
+}
+
+.card-top {
+  flex-direction: column;
+  grid-column: auto / span 1;
+  grid-row: auto / span 2;
+}
+
+.card-right {
+  flex-direction: row-reverse;
+  grid-column: auto / span 2;
+  grid-row: auto / span 1;
+}
+
+.card-bottom {
+  flex-direction: column-reverse;
+  grid-column: auto / span 1;
+  grid-row: auto / span 2;
+}
+
+.card-left {
+  flex-direction: row;
+  grid-column: auto / span 2;
+  grid-row: auto / span 1;
+}
+
+.card-image {
+  display: flex;
+}
+
+.card-top .card-image, .card-bottom .card-image {
+  height: 50%;
+  width: 100%;
+}
+
+.card-left .card-image, .card-right .card-image {
+  height: 100%;
+  width: 50%;
+}
+
+.card-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-top img {
+  border-radius: $cornerRadius $cornerRadius 0 0;
+}
+
+.card-right img {
+  border-radius: 0 $cornerRadius $cornerRadius 0;
+}
+
+.card-bottom img {
+  border-radius: 0 0 $cornerRadius $cornerRadius;
+}
+
+.card-left img {
+  border-radius: $cornerRadius 0 0 $cornerRadius;
+}
+
+.card-text {
+  align-self: center;
+  padding: $boxSpacing;
+}
+
+.card-top .card-text {
+  height: auto;
+  width: auto;
+  padding-bottom: $boxSpacing*1.6;
+}
+
+.card-right .card-text {
+  height: auto;
+  width: 50%;
+  padding-left: $boxSpacing*1.6;
+}
+
+.card-bottom .card-text {
+  height: auto;
+  width: auto;
+  padding-top: $boxSpacing*1.6;
+}
+
+.card-left .card-text {
+  height: auto;
+  width: 50%;
+  padding-right: $boxSpacing*1.6;
+}
+
+.card-text p {
+  margin: 0;
+  line-height: 1.35em;
+  color: #334455;
+  font-weight: bolder;
+}
+
+@media (max-width: 500px) {
+  .card-top {
+    flex-direction: row;
+    grid-column: auto / span 2;
+    grid-row: auto / span 1;
+  }
+
+  .card-bottom {
+    flex-direction: row-reverse;
+    grid-column: auto / span 2;
+    grid-row: auto / span 1;
+  }
+
+  .card-top .card-image, .card-bottom .card-image {
+    height: 100%;
+    width: 50%;
+  }
+
+  .card-top img {
+    border-radius: $cornerRadius 0 0 $cornerRadius;
+  }
+
+  .card-bottom img {
+    border-radius: 0 $cornerRadius $cornerRadius 0;
+  }
+
+  .card-top .card-text {
+    height: auto;
+    width: 50%;
+    padding-right: $boxSpacing*1.6;
+  }
+
+  .card-bottom .card-text {
+    height: auto;
+    width: 50%;
+    padding-left: $boxSpacing*1.6;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .card-image {
+    width: 38% !important;
+  }
+  
+  .card-text {
+    width: 62% !important;
+  }
+}

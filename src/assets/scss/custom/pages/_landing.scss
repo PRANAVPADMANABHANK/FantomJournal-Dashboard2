@@ -31,7 +31,7 @@
     }
 
     .bg-gradient {
-        background: linear-gradient(to bottom, #000, #10c469) !important;
+        background: linear-gradient(to bottom, #000, #551798) !important;
     }
 
     // <===================================================================================>
@@ -75,7 +75,7 @@
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
-        background-color: $primary;
+        background-color: #000;
         transition: all 0.5s;
     }
 
@@ -212,7 +212,7 @@
 
     .features {
         position: relative;
-        bottom: 98px;
+        // bottom: 98px;
         .nav-pills {
             .nav-item {
                 .nav-link {

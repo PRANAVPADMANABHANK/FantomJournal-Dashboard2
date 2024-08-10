@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(4deg, #5a19a1, #4d1589);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 50vh;
+    margin: 0;
+    overflow-x: visible;
+    margin-top: -6rem;
+}
+
+.card-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.card-icon {
+    width: 24px;
+    /* Adjust the size of the icon */
+    height: 24px;
+    margin-right: 10px;
+    /* Space between icon and text */
+}
+
+.card-container .card:nth-child(odd) {
+    background: #e0e0e0;
+    /* Different background color for odd cards (optional) */
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
