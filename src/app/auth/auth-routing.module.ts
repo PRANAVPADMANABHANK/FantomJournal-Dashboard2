@@ -6,36 +6,38 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { RegisterComponent } from './register/register.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
   },
   {
     path: 'lock-screen',
-    component: LockScreenComponent
+    component: LockScreenComponent,
   },
   {
     path: 'confirm-mail',
-    component: ConfirmMailComponent
+    component: ConfirmMailComponent,
   },
   {
     path: 'recover-password',
-    component: RecoverPasswordComponent
+    component: RecoverPasswordComponent,
   },
   {
     path: 'logout',
-    component: LogoutComponent
-  }
+    component: LogoutComponent,
+  },
+  { path: 'payment', component: PaymentComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AuthRoutingModule { }
+export class AuthRoutingModule {}

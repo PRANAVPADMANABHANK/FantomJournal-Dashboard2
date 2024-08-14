@@ -11,6 +11,10 @@ import { LockScreenComponent } from './lock-screen/lock-screen.component';
 import { ConfirmMailComponent } from './confirm-mail/confirm-mail.component';
 import { LogoutComponent } from './logout/logout.component';
 import { FormsModule } from '@angular/forms';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentModalComponent } from './payment-modal/payment-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -21,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     RecoverPasswordComponent,
     LockScreenComponent,
     ConfirmMailComponent,
-    LogoutComponent
+    LogoutComponent,
+    PaymentComponent,
+    PaymentModalComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +35,9 @@ import { FormsModule } from '@angular/forms';
     NgbAlertModule,
     UiModule,
     AuthRoutingModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatButtonModule
   ]
 })
 export class AuthModule { }

@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Select Payment Method</h2>
+<mat-dialog-content>
+  <button mat-button (click)="selectPayment('Google Pay')">Google Pay</button>
+  <button mat-button (click)="selectPayment('PhonePe')">PhonePe</button>
+  <button mat-button (click)="selectPayment('Paytm')">Paytm</button>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

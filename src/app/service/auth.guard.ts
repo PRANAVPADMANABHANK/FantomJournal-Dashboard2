@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
     if (accessToken) {
       return true;
     } else {
-      this.router.navigate(['/auth/boxed-signin']);
+      this.router.navigate(['/auth/login']);
       return false;
     }
   }

@@ -127,16 +127,18 @@
                 <div ngbDropdownMenu class="dropdown-menu-end profile-dropdown ">
                     <!-- item-->
                     <div class="dropdown-header noti-title" ngbDropdownItem>
-                        <h6 class="text-overflow m-0">Welcome !</h6>
+                        <h6 class="text-overflow m-0">Welcome {{userName}}!</h6>
                     </div>
 
                     <!-- Profile Dropdown Options -->
-                    <ng-container *ngFor="let option of profileOptions; let i = index">
-                        <div class="dropdown-divider" *ngIf="i === profileOptions.length - 1"></div>
-                        <a class="notify-item" ngbDropdownItem (click)="option.label === 'Logout' ? onSignOut() : null">
+                    <ng-container>
+                        <!-- <div class="dropdown-divider" *ngIf="i === profileOptions.length - 1"></div> -->
+                        <h6 style="margin: 20px 22px;cursor: pointer;">My Account</h6>
+                        <h6 style="margin: 0px 22px;cursor: pointer;" (click)="onSignOut()">Logout</h6>
+                        <!-- <a class="notify-item" ngbDropdownItem (click)="option.label === 'Logout' ? onSignOut() : null">
                             <i [class]="option.icon"></i>
                             <span style="cursor: pointer;" [routerLink]="option.redirectTo">{{ option.label }}</span>
-                        </a>
+                        </a> -->
                     </ng-container>
 
 

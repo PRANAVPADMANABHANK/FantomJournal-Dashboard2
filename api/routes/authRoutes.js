@@ -15,5 +15,10 @@ router.post('/login', UserController.login);
 // Refresh token route
 router.post('/refresh-token', UserController.refreshToken);
 
+//payment
+
+router.post('/payment', UserController.payment);
+router.post('/phonepe/status', UserController.status);
+
 
 module.exports = router;

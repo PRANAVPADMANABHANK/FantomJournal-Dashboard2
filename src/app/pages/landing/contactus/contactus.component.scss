@@ -116,7 +116,7 @@
   }
   
   .send-btn {
-    background: linear-gradient(90deg, #602DFF 0%, #170055 100%);
+    background: linear-gradient(90deg, #ba00f7 0%, #000 100%);
     padding: .75rem;
     font-size: 1rem;
     font-weight: 600;
@@ -129,13 +129,13 @@
   label textarea:hover,
   label input:focus,
   label textarea:focus {
-    border-color: #602DFF;
-    box-shadow: 0 0 0 3px #602DFF80;
+    border-color: #000;
+    box-shadow: 0 0 0 3px #ba00f7;
   }
   
   .send-btn:hover,
   .send-btn:focus {
-    background: linear-gradient(90deg, #602DFF 75%, #170055 100%);
+    background: linear-gradient(90deg, #000 25%, #ba00f7 75%);
   }
   
   @media screen and (max-width: 900px) {

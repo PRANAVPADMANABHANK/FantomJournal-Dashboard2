@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   formSubmitted: boolean = false;
   error: string = '';
-  returnUrl: string = '/dashboard';
+  returnUrl: string = '/auth/payment';
   loading: boolean = false;
 
   constructor(

@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     mobile: { type: Number, required: true },
     password: { type: String, required: true },
+    payment: { type: Boolean, default: false }  // New field added
 }, { timestamps: true });
 
 const User = mongoose.model('User', userSchema);

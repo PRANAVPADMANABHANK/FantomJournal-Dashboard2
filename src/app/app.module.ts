@@ -8,7 +8,10 @@ import { LayoutModule } from './layout/layout.module';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { JoyrideModule } from 'ngx-joyride';
 import { AuthInterceptor } from './interceptors/auth.interceptor'; // Adjust the path if necessary
-import { AuthService } from './service/auth.service'; 
+import { AuthService } from './service/auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { AuthService } from './service/auth.service';
     SweetAlert2Module.forRoot(),
     CoreModule,
     LayoutModule,
-    AppRoutingModule],
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule],
   providers: [AuthService,{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })

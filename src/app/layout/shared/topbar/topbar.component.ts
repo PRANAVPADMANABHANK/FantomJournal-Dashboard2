@@ -19,14 +19,12 @@ import { PageTitle } from '../models/page-title.model';
 
 import { AuthService } from '../../../service/auth.service'; // Adjust the path if necessary
 
-
 @Component({
   selector: 'app-topbar',
   templateUrl: './topbar.component.html',
-  styleUrls: ['./topbar.component.scss']
+  styleUrls: ['./topbar.component.scss'],
 })
 export class TopbarComponent implements OnInit {
-
   notificationList: NotificationItem[] = [];
   profileOptions: ProfileOptionItem[] = [];
   searchResults: SearchResultItem[] = [];
@@ -34,6 +32,7 @@ export class TopbarComponent implements OnInit {
   pageTitle: string = '';
   loggedInUser: User | null = null;
   topnavCollapsed: boolean = false;
+  userName: string | null = null;
 
   @Input() layoutType: string = 'vertical';
   @Input() containerClass?: string = '';
@@ -41,14 +40,16 @@ export class TopbarComponent implements OnInit {
   // output events
   @Output() mobileMenuButtonClicked = new EventEmitter<void>();
 
-  constructor (
+  constructor(
     private authService: AuthenticationService,
     private eventService: EventService,
     private appService: AuthService
   ) {
-    this.eventService.on(EventType.CHANGE_PAGE_TITLE).subscribe(({ payload }) => {
-      this.pageTitle = (payload as PageTitle).title;
-    });
+    this.eventService
+      .on(EventType.CHANGE_PAGE_TITLE)
+      .subscribe(({ payload }) => {
+        this.pageTitle = (payload as PageTitle).title;
+      });
   }
 
   ngOnInit(): void {
@@ -56,6 +57,12 @@ export class TopbarComponent implements OnInit {
     this._fetchNotifications();
     this._fetchProfileOptions();
     this.loggedInUser = this.authService.currentUser();
+    // Fetch the user's name from localStorage
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      const parsedUser = JSON.parse(userData);
+      this.userName = parsedUser.name;
+    }
   }
 
   /**
@@ -75,42 +82,45 @@ export class TopbarComponent implements OnInit {
 
 
   onSignOut(): void {
-    console.log("signout got");
+    console.log('signout got');
     this.appService.logout();
   }
   /**
    * Fetches search results
    */
   _fetchSearchData(): void {
-    this.searchResults = [{
-      id: 1,
-      text: 'Analytics Report',
-      icon: 'fe-home',
-    },
-    {
-      id: 2,
-      text: 'How can I help you?',
-      icon: 'fe-aperture',
-    },
-    {
-      id: 3,
-      text: 'User profile settings',
-      icon: 'fe-settings',
-    }];
+    this.searchResults = [
+      {
+        id: 1,
+        text: 'Analytics Report',
+        icon: 'fe-home',
+      },
+      {
+        id: 2,
+        text: 'How can I help you?',
+        icon: 'fe-aperture',
+      },
+      {
+        id: 3,
+        text: 'User profile settings',
+        icon: 'fe-settings',
+      },
+    ];
 
-    this.searchUsers = [{
-      id: 1,
-      name: 'Erwin Brown',
-      position: 'UI Designer',
-      profile: 'assets/images/users/user-2.jpg'
-    },
-    {
-      id: 2,
-      name: 'Jacob Deo',
-      position: 'Developer',
-      profile: 'assets/images/users/user-5.jpg'
-    }]
-
+    this.searchUsers = [
+      {
+        id: 1,
+        name: 'Erwin Brown',
+        position: 'UI Designer',
+        profile: 'assets/images/users/user-2.jpg',
+      },
+      {
+        id: 2,
+        name: 'Jacob Deo',
+        position: 'Developer',
+        profile: 'assets/images/users/user-5.jpg',
+      },
+    ];
   }
 
   /**
@@ -121,13 +131,11 @@ export class TopbarComponent implements OnInit {
   }
 
   /**
-* Toggle the menu bar when having mobile screen
-*/
+   * Toggle the menu bar when having mobile screen
+   */
   toggleMobileMenu(event: any) {
-
     this.topnavCollapsed = !this.topnavCollapsed;
     event.preventDefault();
     this.mobileMenuButtonClicked.emit();
   }
-
 }

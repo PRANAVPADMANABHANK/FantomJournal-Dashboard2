@@ -10,6 +10,7 @@ import { RevenueChartComponent } from './dashboard-one/revenue-chart/revenue-cha
 import { SalesChartComponent } from './dashboard-one/sales-chart/sales-chart.component';
 import { StatisticsChartComponent } from './dashboard-one/statistics-chart/statistics-chart.component';
 import { DashboardsRoutingModule } from './dashboards-routing.module';
+// import { CalendarComponent } from 'src/app/apps/calendar/calendar.component';
 
 
 
@@ -21,7 +22,8 @@ import { DashboardsRoutingModule } from './dashboards-routing.module';
     StatisticsChartComponent,
     RevenueChartComponent,
     InboxComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    // CalendarComponent
   ],
   imports: [
     CommonModule,

@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
       this.apiService.signup(formData).subscribe({
         next: (response) => {
           
-            console.log('Signup successful', response);
+            // console.log('Signup successful', response);
             this.router.navigate(['/auth/login']);
             // this.router.navigate(['/auth/confirm-mail']);
         },

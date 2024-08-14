@@ -283,8 +283,11 @@ body {
 .card-text p {
   margin: 0;
   line-height: 1.35em;
-  color: #334455;
+  color: #000;
   font-weight: bolder;
+  font-size: 20px;
+  animation: blink 1.5s infinite; /* Apply blinking effect */
+
 }
 
 @media (max-width: 500px) {
@@ -336,3 +339,20 @@ body {
     width: 62% !important;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

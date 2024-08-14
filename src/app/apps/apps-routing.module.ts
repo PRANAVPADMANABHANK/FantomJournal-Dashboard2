@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../service/auth.guard';
 
 const routes: Routes = [
-  { path: 'calendar', loadChildren: () => import('./calendar/calendar.module').then(m => m.CalendarModule) },
+  { path: 'calendar', canActivate: [AuthGuard], loadChildren: () => import('./calendar/calendar.module').then(m => m.CalendarModule) },
   { path: 'chat', loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule) },
   { path: 'projects', loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule) },
   { path: 'email', loadChildren: () => import('./email/email.module').then(m => m.EmailModule) },

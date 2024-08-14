@@ -26,5 +26,16 @@ export class ApiService {
   }
   
 
+
+  payment(data: any): Observable<any>{
+    return this.http.post(`${this.baseUrl}/payment`, data);
+  }
   // Other API methods can be added here
+
+
+
+  checkPaymentStatus(transactionId: string): Observable<any> {
+    return this.http.post('/api/phonepe/status', { transactionId });
+  }
+  
 }
